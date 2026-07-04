@@ -28,3 +28,10 @@ export interface Trade {
    time: number
    side: 'buy' | 'sell'
 }
+export type TimeFrame = '1h' | '1d' | '1m' | '1y'
+
+export interface TerminalSettings {
+   symbol: string
+   timeframe: TimeFrame
+   darkMode: boolean
+}
