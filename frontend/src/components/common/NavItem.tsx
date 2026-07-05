@@ -1,12 +1,14 @@
 import { NavLink } from 'react-router-dom'
 
-interface NavItemProps {
+function NavItem({
+   to,
+   label,
+   isActive,
+}: {
    to: string
    label: string
    isActive: boolean
-}
-
-function NavItem({ to, label, isActive }: NavItemProps) {
+}) {
    const baseClasses = 'px-3 py-2 rounded-lg text-sm transition-colors'
 
    if (isActive) {

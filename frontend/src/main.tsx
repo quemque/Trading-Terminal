@@ -6,10 +6,8 @@ import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import { initializeTheme } from './lib/theme'
-import { initializeMockStream } from './lib/mock-stream'
 
 initializeTheme()
-initializeMockStream()
 
 const rootElement = document.getElementById('root')
 if (!rootElement) throw new Error('Root element not found')

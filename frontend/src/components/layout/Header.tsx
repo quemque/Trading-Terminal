@@ -1,15 +1,12 @@
 import { useLocation } from 'react-router-dom'
-import { useTradingStore } from '../store/TradingStore'
-import { useThemeStore } from '../store/ThemeStore'
-import NAV_ITEMS from '../data/nav-items'
-import NavItem from './NavItem'
+import { useThemeStore } from '../../store/ThemeStore'
+import NAV_ITEMS from '../../config/nav-items'
+import NavItem from '../common/NavItem'
 import { NavLink } from 'react-router-dom'
-import ConnectionStatus from './ConnectionStatus'
-import ThemeToggle from './ThemeToggle'
+import ThemeToggle from '../common/ThemeToggle'
 
 function Header() {
    const { pathname } = useLocation()
-   const isConnected = useTradingStore((s) => s.isConnected)
    const { theme, toggleTheme } = useThemeStore()
 
    const isActivePath = (path: string) => pathname.startsWith(path)
@@ -34,9 +31,8 @@ function Header() {
             ))}
          </nav>
 
-         <div className="flex items-center gap-4">
+         <div className="flex items-center gap-4 mr-5">
             <ThemeToggle theme={theme} onToggle={toggleTheme} />
-            <ConnectionStatus isConnected={isConnected} />
          </div>
       </header>
    )

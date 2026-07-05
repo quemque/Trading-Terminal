@@ -1,11 +1,12 @@
 import { FaSun, FaMoon } from 'react-icons/fa'
 
-interface ThemeToggleProps {
+function ThemeToggle({
+   theme,
+   onToggle,
+}: {
    theme: 'dark' | 'light'
    onToggle: () => void
-}
-
-function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
+}) {
    return (
       <button
          onClick={onToggle}
