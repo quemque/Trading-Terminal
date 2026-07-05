@@ -1,12 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-
-export type Theme = 'light' | 'dark'
-
-interface ThemeState {
-   theme: Theme
-   toggleTheme: () => void
-}
+import { ThemeState } from '../types/theme'
 
 export const useThemeStore = create<ThemeState>()(
    persist(

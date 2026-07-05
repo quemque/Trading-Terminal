@@ -1,23 +1,5 @@
 import { create } from 'zustand'
-import { Tick, Candle, Trade, OrderBook } from '../types/trading'
-
-export interface TradingState {
-   currentPrice: number | null
-   lastTick: Tick | null
-   symbol: string
-   candles: Candle[]
-   orderBook: OrderBook | null
-   trades: Trade[]
-   isConnected: boolean
-
-   setSymbol: (symbol: string) => void
-   updateTick: (tick: Tick) => void
-   addCandle: (candle: Candle) => void
-   updateOrderBook: (book: OrderBook) => void
-   addTrade: (trade: Trade) => void
-   setConnected: (connected: boolean) => void
-   reset: () => void
-}
+import { TradingState } from '../types/trading'
 
 export const useTradingStore = create<TradingState>((set) => ({
    currentPrice: null,
