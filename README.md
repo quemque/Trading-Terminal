@@ -32,7 +32,7 @@
 
 ### ⚡ В процессе
 
-- [ ] **Docker** — контейнеризация frontend + backend
+- [x] **Docker** — контейнеризация frontend + backend
 - [ ] **Zustand** — управление состоянием валют
 - [ ] **Shadcn UI** — улучшение UI/UX
 
