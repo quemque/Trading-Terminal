@@ -1,4 +1,7 @@
-export function TerminalHeader({ symbol }: { symbol: string }) {
+import { useTradingStore } from '../../store/tradingStore'
+
+export function TerminalHeader() {
+   const { symbol } = useTradingStore()
    return (
       <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
          <div className="flex items-center gap-3">

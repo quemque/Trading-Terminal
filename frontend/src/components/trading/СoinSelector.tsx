@@ -1,12 +1,8 @@
 import { AVAILABLE_COINS } from '../../config/available-coins'
+import { useTradingStore } from '../../store/tradingStore'
 
-export function CoinSelector({
-   symbol,
-   setSymbol,
-}: {
-   symbol: string
-   setSymbol: (symbol: string) => void
-}) {
+export function CoinSelector() {
+   const { symbol, setSymbol } = useTradingStore()
    return (
       <div className="flex flex-wrap gap-2 mb-6">
          {AVAILABLE_COINS.map((coin) => (

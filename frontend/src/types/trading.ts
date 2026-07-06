@@ -3,15 +3,19 @@ export interface PriceHistory {
    timestamp: number
    date: string
 }
-export interface PriceChartProps {
-   symbol: string
-   days: number
-   onDaysChange: (days: number) => void
-   isLoading: boolean
-   data: HistoryResponse | undefined
-}
 export interface HistoryResponse {
    symbol: string
    prices: PriceHistory[]
    lastUpdated: number
+}
+export interface TradingState {
+   symbol: string
+   days: number
+   historyData: HistoryResponse | null
+   isLoading: boolean
+
+   setSymbol: (symbol: string) => void
+   setDays: (days: number) => void
+   setHistoryData: (data: HistoryResponse) => void
+   setIsLoading: (loading: boolean) => void
 }
