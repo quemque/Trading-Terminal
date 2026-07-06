@@ -1,5 +1,5 @@
 const NAV_ITEMS = [
-   { to: '/terminal', label: 'Терминал' },
-   { to: '/settings', label: 'Настройки' },
+   { to: '/terminal', label: 'Terminal' },
+   { to: '/settings', label: 'Settings' },
 ] as const
 export default NAV_ITEMS

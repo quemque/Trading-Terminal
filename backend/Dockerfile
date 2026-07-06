@@ -8,4 +8,4 @@ RUN bun install
 
 EXPOSE 3000
 
-CMD ["bun", "backend/src/index.js"]
+CMD ["bun", "--hot" ,"backend/src/index.js"]
