@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { bitcoinApi } from '../api/coin.api'
+import { coinApi } from '../api/coin.api'
 import { DEFAULT_SYMBOL, DEFAULT_DAYS } from '../config/default-const'
 
 export function useBitcoinHistory(
@@ -8,7 +8,7 @@ export function useBitcoinHistory(
 ) {
    return useQuery({
       queryKey: ['bitcoin-history', symbol, days],
-      queryFn: () => bitcoinApi.fetchHistory(symbol, days),
+      queryFn: () => coinApi.fetchHistory(symbol, days),
       staleTime: 60000,
       retry: false,
    })

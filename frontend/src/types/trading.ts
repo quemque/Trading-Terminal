@@ -19,3 +19,8 @@ export interface TradingState {
    setHistoryData: (data: HistoryResponse) => void
    setIsLoading: (loading: boolean) => void
 }
+export interface Coin {
+   id: string
+   symbol: string
+   name: string
+}

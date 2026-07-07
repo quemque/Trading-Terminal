@@ -1,4 +1,3 @@
-import { useBitcoinHistory } from '../hooks/useCoinHistory'
 import { PriceChart } from '../components/trading/PriceChart/PriceChart'
 import { CoinSelector } from '../components/trading/СoinSelector'
 import { TerminalHeader } from '../components/trading/TerminalHeader'
