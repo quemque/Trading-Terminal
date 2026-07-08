@@ -5,6 +5,8 @@ const historyRoutes = require('./routes/historyRoutes')
 const coinRoutes = require('./routes/coinRoutes')
 const errorHandler = require('./middleware/errorHandler')
 
+require('./websocket')
+
 const app = express()
 const { port } = config
 
