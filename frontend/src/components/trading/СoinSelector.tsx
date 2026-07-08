@@ -4,10 +4,10 @@ import Loading from '../common/Loading'
 import { DEFAULT_COINS } from '../../config/default-const'
 
 export function CoinSelector() {
-   const { symbol, setSymbol } = useTradingStore()
+   const { symbol, setSymbol, setWsSymbol } = useTradingStore()
    const { data: coins, isLoading, error } = useCoinList(DEFAULT_COINS)
 
-   if (isLoading) return <Loading />
+   if (isLoading) return <Loading message="Loading coin list..." />
    if (error) {
       console.error('CoinSelector error:', error)
       return <div className="text-red-500">Failed to load coins</div>
@@ -19,7 +19,10 @@ export function CoinSelector() {
          {coins.slice(0, 10).map((coin) => (
             <button
                key={coin.id}
-               onClick={() => setSymbol(coin.id)}
+               onClick={() => {
+                  setSymbol(coin.id)
+                  setWsSymbol(coin.symbol.toUpperCase())
+               }}
                className={`px-4 py-2 rounded-lg transition-colors ${
                   symbol === coin.id
                      ? 'bg-orange-500 text-white'

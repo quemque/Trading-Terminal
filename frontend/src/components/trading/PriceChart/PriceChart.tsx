@@ -21,7 +21,7 @@ export function PriceChart() {
 
    useChart(containerRef, chartData, isDark)
 
-   if (isLoading) return <Loading />
+   if (isLoading) return <Loading message="Loading price..." />
    if (!historyData?.prices?.length) return <EmptyState symbol={symbol} />
 
    const currentPrice = historyData.prices[historyData.prices.length - 1].price

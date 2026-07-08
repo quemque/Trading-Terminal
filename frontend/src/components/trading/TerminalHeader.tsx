@@ -13,7 +13,6 @@ export function TerminalHeader() {
             </h1>
          </div>
          <div className="flex items-center gap-4 text-sm text-text-secondary">
-            <span className="hidden sm:inline">⚡ Live</span>
             <span className="px-3 py-1 rounded-full bg-bg-tertiary text-text-secondary">
                {symbol.toUpperCase()}
             </span>
