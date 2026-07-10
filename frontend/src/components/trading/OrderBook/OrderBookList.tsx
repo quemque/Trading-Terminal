@@ -1,6 +1,8 @@
 import { OrderBookLevel as OrderBookLevelComponent } from './OrderBookLevel'
 import type { OrderBookLevel } from '../../../types/Order'
 import { WS_CONFIG } from '../../../config/websocket'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Badge } from '@/components/ui/badge'
 
 export function OrderBookList({
    items,
@@ -11,11 +13,9 @@ export function OrderBookList({
    type: 'bid' | 'ask'
    limit?: number
 }) {
-   const label = type === 'bid' ? 'Bids (Buy)' : 'Asks (Sell)'
-
    if (!items || items.length === 0) {
       return (
-         <div className="text-sm text-text-secondary">
+         <div className="text-sm text-muted-foreground text-center py-4">
             No {type === 'bid' ? 'bids' : 'asks'} available
          </div>
       )
@@ -23,19 +23,26 @@ export function OrderBookList({
 
    return (
       <div>
-         <div className="text-sm font-medium text-text-secondary mb-2">
-            {label}
+         <div className="flex items-center gap-2 mb-2 ml-4">
+            <Badge variant={type === 'bid' ? 'default' : 'destructive'}>
+               {type === 'bid' ? 'Bids' : 'Asks'}
+            </Badge>
+            <span className="text-xs text-muted-foreground ml-10">
+               {type === 'bid' ? 'Buy' : 'Sell'}
+            </span>
          </div>
-         <div className="space-y-1 max-h-60 overflow-y-auto">
-            {items.slice(0, limit).map((item, index) => (
-               <OrderBookLevelComponent
-                  key={index}
-                  price={item.price}
-                  amount={item.amount}
-                  type={type}
-               />
-            ))}
-         </div>
+         <ScrollArea className="h-60">
+            <div className="space-y-1">
+               {items.slice(0, limit).map((item, index) => (
+                  <OrderBookLevelComponent
+                     key={index}
+                     price={item.price}
+                     amount={item.amount}
+                     type={type}
+                  />
+               ))}
+            </div>
+         </ScrollArea>
       </div>
    )
 }

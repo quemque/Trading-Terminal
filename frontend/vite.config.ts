@@ -5,18 +5,18 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
    plugins: [react(), tailwindcss()],
-   // server: {
-   //    host: '0.0.0.0',
-   //    watch: {
-   //       usePolling: true,
-   //       interval: 100,
-   //    },
-   //    hmr: {
-   //       protocol: 'ws',
-   //       host: 'localhost',
-   //       port: 5173,
-   //    },
-   // },
+   server: {
+      host: '0.0.0.0',
+      watch: {
+         usePolling: true,
+         interval: 100,
+      },
+      hmr: {
+         protocol: 'ws',
+         host: 'localhost',
+         port: 5173,
+      },
+   },
    resolve: {
       alias: {
          '@': path.resolve(__dirname, './src'),

@@ -1,8 +1,16 @@
+import { Badge } from '@/components/ui/badge'
+
 export function OrderHeader() {
    return (
-      <div className="flex justify-between items-center mb-4">
-         <h3 className="font-semibold text-text-primary">📊 Order Book</h3>
-         <span className="text-xs text-green-500">🟢 Live</span>
-      </div>
+      <header className="flex justify-between items-center mb-4">
+         <h1 className="text-lg font-semibold">Order Book</h1>
+         <Badge variant="secondary" className="gap-1.5">
+            <span className="relative flex h-2 w-2">
+               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+            </span>
+            Live
+         </Badge>
+      </header>
    )
 }

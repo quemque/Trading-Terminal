@@ -5,7 +5,7 @@ export const WS_CONFIG = {
    RECONNECT_DELAY: 2000,
    MAX_RECONNECT_ATTEMPTS: 5,
    DEFAULT_SYMBOL: 'BTC',
-   ORDER_LIMIT: 7,
+   ORDER_LIMIT: 10,
 } as const
 
 export const WS_MESSAGE_TYPES = {
