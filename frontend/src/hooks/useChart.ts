@@ -1,12 +1,6 @@
 import { useEffect, useRef } from 'react'
-import {
-   createChart,
-   IChartApi,
-   ISeriesApi,
-   CandlestickSeries,
-   ColorType,
-   UTCTimestamp,
-} from 'lightweight-charts'
+import { createChart, CandlestickSeries, ColorType } from 'lightweight-charts'
+import type { IChartApi, ISeriesApi, UTCTimestamp } from 'lightweight-charts'
 import { CHART_COLORS, CHART_DEFAULTS } from '../config/chart.config'
 
 export function useChart(

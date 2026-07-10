@@ -1,6 +1,6 @@
 import { WS_CONFIG, WS_MESSAGE_TYPES } from '../config/websocket'
-import { MessageHandler } from '../types/Order'
-import { WebSocketMessage } from '../types/Order'
+import type { MessageHandler } from '../types/Order'
+import type { WebSocketMessage } from '../types/Order'
 
 export class WebSocketService {
    private ws: WebSocket | null = null

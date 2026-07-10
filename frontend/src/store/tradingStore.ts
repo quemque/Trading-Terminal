@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { TradingState } from '../types/trading'
+import type { TradingState } from '../types/trading'
 import { DEFAULT_SYMBOL, DEFAULT_DAYS } from '../config/default-const'
 
 export const useTradingStore = create<TradingState>((set) => ({

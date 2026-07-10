@@ -1,4 +1,4 @@
-import { OrderBookData } from '../types/Order'
+import type { OrderBookData } from '../types/Order'
 
 export const WS_CONFIG = {
    URL: import.meta.env.VITE_WS_URL || 'ws://localhost:8080',

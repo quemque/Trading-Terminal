@@ -1,5 +1,5 @@
 import { OrderBookLevel as OrderBookLevelComponent } from './OrderBookLevel'
-import { OrderBookLevel } from '../../../types/Order'
+import type { OrderBookLevel } from '../../../types/Order'
 import { WS_CONFIG } from '../../../config/websocket'
 
 export function OrderBookList({

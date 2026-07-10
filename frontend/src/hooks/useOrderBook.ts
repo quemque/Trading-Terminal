@@ -1,12 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { DEFAULT_SYMBOL } from '../config/default-const'
 import { WebSocketService } from '../services/WebSocketService'
-import { OrderBookData } from '../types/Order'
-import {
-   WS_CONFIG,
-   WS_MESSAGE_TYPES,
-   WebSocketMessage,
-} from '../config/websocket'
+import type { OrderBookData } from '../types/Order'
+import { WS_CONFIG, WS_MESSAGE_TYPES } from '../config/websocket'
+import type { WebSocketMessage } from '../config/websocket'
 
 export function useOrderBook(symbol: string = DEFAULT_SYMBOL) {
    const [orderBook, setOrderBook] = useState<OrderBookData>({

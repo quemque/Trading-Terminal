@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { HistoryResponse, Coin } from '../types/trading'
+import type { HistoryResponse, Coin } from '../types/trading'
 import {
    DEFAULT_SYMBOL,
    DEFAULT_DAYS,
