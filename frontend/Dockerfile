@@ -1,11 +1,13 @@
 FROM oven/bun:latest
 
-WORKDIR /app/frontend
+WORKDIR /app
 
-COPY . .
+COPY package.json bun.lock ./
 
 RUN bun install
 
+COPY . .
+
 EXPOSE 5173
 
-CMD ["bun", "run", "--cwd", "frontend", "dev", "--host", "0.0.0.0"]
+CMD ["bun", "run", "dev", "--host", "0.0.0.0"]

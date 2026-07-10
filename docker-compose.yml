@@ -3,8 +3,8 @@ version: '3.8'
 services:
    backend:
       build:
-         context: .
-         dockerfile: backend/Dockerfile
+         context: ./backend
+         dockerfile: Dockerfile
       container_name: trading-backend
       ports:
          - '${PORT}:${PORT}'
@@ -15,24 +15,24 @@ services:
          - API_KEY=${API_KEY}
          - NODE_ENV=development
       volumes:
-         - .:/app/backend
-         - /app/backend/node_modules
+         - ./backend:/app
+         - /app/node_modules
       networks:
          - trading-network
       restart: unless-stopped
 
    frontend:
       build:
-         context: .
-         dockerfile: frontend/Dockerfile
+         context: ./frontend
+         dockerfile: Dockerfile
       container_name: trading-frontend
       ports:
          - '5173:5173'
       environment:
-         - VITE_API_URL=http://localhost:${VITE_PORT}
+         - VITE_API_URL=http://localhost:${PORT}
       volumes:
-         - .:/app/frontend
-         - /app/frontend/node_modules
+         - ./frontend:/app
+         - /app/node_modules
       depends_on:
          - backend
       networks:
