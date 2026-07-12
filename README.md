@@ -34,7 +34,7 @@
 
 - [x] **Docker** — контейнеризация frontend + backend
 - [x] **Zustand** — управление состоянием валют
-- [ ] **Shadcn UI** — улучшение UI/UX
+- [x] **Shadcn UI** — улучшение UI/UX
 - [ ] **lightweight-charts** - добавление функций управления графиком
 
 ### 📦 В планах

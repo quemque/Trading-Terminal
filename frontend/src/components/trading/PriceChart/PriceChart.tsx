@@ -7,6 +7,7 @@ import { ChartHeader } from './ChartHeader'
 import { DaysSelector } from './DaysSelector'
 import { EmptyState } from './EmptyState'
 import { useTradingStore } from '../../../store/tradingStore'
+import { Card, CardContent } from '@/components/ui/card'
 
 export function PriceChart() {
    const containerRef = useRef<HTMLDivElement>(null)
@@ -27,10 +28,15 @@ export function PriceChart() {
    const currentPrice = historyData.prices[historyData.prices.length - 1].price
 
    return (
-      <div className="bg-bg-secondary rounded-xl p-6 shadow-lg">
-         <ChartHeader symbol={symbol} days={days} price={currentPrice} />
-         <DaysSelector days={days} onDaysChange={setDays} />
-         <div ref={containerRef} style={{ width: '100%', height: '450px' }} />
-      </div>
+      <Card className="overflow-hidden">
+         <CardContent className="p-6">
+            <ChartHeader symbol={symbol} days={days} price={currentPrice} />
+            <DaysSelector days={days} onDaysChange={setDays} />
+            <div
+               ref={containerRef}
+               className="w-full h-[450px] rounded-lg border border-border bg-background/50"
+            />
+         </CardContent>
+      </Card>
    )
 }

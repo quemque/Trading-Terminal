@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom'
+import { cn } from '@/lib/utils'
+import { ActiveNavLabel } from './ActiveNavLabel'
 
 function NavItem({
    to,
@@ -9,31 +11,24 @@ function NavItem({
    label: string
    isActive: boolean
 }) {
-   const baseClasses = 'px-3 py-2 rounded-lg text-sm transition-colors'
-
-   if (isActive) {
-      return (
-         <span
-            className={`${baseClasses} bg-bg-tertiary text-text-primary cursor-default`}
-         >
-            {label}
-         </span>
-      )
-   }
+   if (isActive) return <ActiveNavLabel label={label} />
 
    return (
       <NavLink
          to={to}
-         className={({ isActive }) =>
-            `${baseClasses} ${
-               isActive
-                  ? 'bg-bg-tertiary text-text-primary'
-                  : 'text-text-secondary hover:text-text-primary hover:bg-bg-hover'
-            }`
+         className={({ isActive: linkActive }) =>
+            cn(
+               'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+               'hover:bg-accent hover:text-accent-foreground',
+               linkActive
+                  ? 'bg-accent text-accent-foreground shadow-sm'
+                  : 'text-muted-foreground',
+            )
          }
       >
          {label}
       </NavLink>
    )
 }
+
 export default NavItem

@@ -1,20 +1,25 @@
-import { FaSun, FaMoon } from 'react-icons/fa'
+import { Button } from '@/components/ui/button'
+import { Moon, Sun } from 'lucide-react'
 
-function ThemeToggle({
-   theme,
-   onToggle,
-}: {
-   theme: 'dark' | 'light'
+interface ThemeToggleProps {
+   theme: string
    onToggle: () => void
-}) {
+}
+
+export default function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
    return (
-      <button
+      <Button
+         variant="ghost"
+         size="icon"
          onClick={onToggle}
-         className="p-2 rounded-lg bg-bg-tertiary text-text-secondary 
-                 hover:bg-bg-hover hover:text-text-primary transition-colors"
+         className="w-9 h-9 rounded-lg"
       >
-         {theme === 'dark' ? <FaSun /> : <FaMoon />}
-      </button>
+         {theme === 'dark' ? (
+            <Sun className="h-4 w-4" />
+         ) : (
+            <Moon className="h-4 w-4" />
+         )}
+         <span className="sr-only">Toggle theme</span>
+      </Button>
    )
 }
-export default ThemeToggle
