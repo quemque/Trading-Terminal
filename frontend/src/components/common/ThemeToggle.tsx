@@ -1,12 +1,13 @@
 import { Button } from '@/components/ui/button'
 import { Moon, Sun } from 'lucide-react'
 
-interface ThemeToggleProps {
+export default function ThemeToggle({
+   theme,
+   onToggle,
+}: {
    theme: string
    onToggle: () => void
-}
-
-export default function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
+}) {
    return (
       <Button
          variant="ghost"
