@@ -1,5 +1,5 @@
 import { PriceChart } from '../components/trading/PriceChart/PriceChart'
-import { CoinSelector } from '../components/trading/СoinSelector'
+import { CoinSelector } from '../components/trading/CoinSelector'
 import { TerminalHeader } from '../components/trading/TerminalHeader'
 import { useTradingData } from '../hooks/useTradingData'
 import { OrderBook } from '../components/trading/OrderBook/OrderBook'
