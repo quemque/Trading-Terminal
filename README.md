@@ -39,7 +39,7 @@
 
 ### 📦 В планах
 
-- [ ] **Тестирование** — Vitest + React Testing Library
+- [x] **Тестирование** — Vitest + React Testing Library
 - [ ] **База данных** — сохранение истории (SQLite/PostgreSQL)
 - [ ] **Аутентификация** — пользовательские аккаунты
 - [ ] **CI/CD** — автоматический деплой на Vercel/Railway
