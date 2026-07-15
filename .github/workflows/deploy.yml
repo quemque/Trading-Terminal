@@ -1,14 +1,9 @@
-name: Test & Deploy
+name: Tests
 
-on:
-   push:
-      branches: [main]
-   pull_request:
-      branches: [main]
+on: [push, pull_request]
 
 jobs:
    test:
-      name: Run Tests
       runs-on: ubuntu-latest
 
       defaults:
@@ -21,30 +16,9 @@ jobs:
 
          - name: Setup Bun
            uses: oven-sh/setup-bun@v1
-           with:
-              bun-version: latest
 
          - name: Install dependencies
            run: bun install
 
          - name: Run tests
-           run: bun test --config vitest.config.ts
-
-   deploy:
-      name: Deploy to Vercel
-      needs: test
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      runs-on: ubuntu-latest
-
-      steps:
-         - name: Checkout
-           uses: actions/checkout@v4
-
-         - name: Deploy to Vercel
-           uses: amondnet/vercel-action@v25
-           with:
-              vercel-token: ${{ secrets.VERCEL_TOKEN }}
-              vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-              vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-              vercel-args: '--prod'
-              working-directory: ./frontend
+           run: bunx vitest --config vitest.config.ts
