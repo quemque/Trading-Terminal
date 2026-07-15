@@ -2,11 +2,11 @@
 
 > Современный веб-терминал для отслеживания криптовалютных цен в реальном времени
 
-## ![Trading Terminal Demo](./frontend/public/img/chart_demo.png)
+![Trading Terminal Demo](./frontend/public/img/chart_demo.png)
 
 ## 📋 О проекте
 
-**Trading Terminal** — это веб-приложение для мониторинга криптовалютных рынков. На данный момент реализована базовая функциональность: отображение текущей цены Bitcoin с интеграцией через CoinGecko API.
+**Trading Terminal** — это full-stack веб-приложение для мониторинга криптовалютных рынков. Включает графики цен, книгу ордеров и поддержку множества валют с обновлением данных в реальном времени через WebSocket.
 
 ---
 
@@ -14,40 +14,33 @@
 
 | Слой                 | Технологии                                    |
 | -------------------- | --------------------------------------------- |
-| **Frontend**         | React, TypeScript, Tailwind CSS, React Router |
-| **Backend**          | Node.js, Express, Axios                       |
-| **State Management** | React Query                                   |
-| **Build Tool**       | Vite, Bun                                     |
-| **API**              | CoinGecko API                                 |
-| **Code Quality**     | ESLint, TypeScript                            |
+| **Frontend**         | React 18, TypeScript, Tailwind CSS, Shadcn UI |
+| **Backend**          | Bun, Express 5, WebSocket (ws), Zod, Axios    |
+| **API**              | CoinGecko API, Binance WebSocket              |
+| **State Management** | Zustand, TanStack Query (React Query)         |
+| **Charts**           | Lightweight Charts (TradingView)              |
+| **Build Tool**       | Vite                                          |
+| **Testing**          | Vitest, React Testing Library                 |
+| **Code Quality**     | ESLint, TypeScript, Prettier                  |
+| **Containerization** | Docker, Docker Compose                        |
 
 ---
 
-### 🔥 Ближайшие цели
-
-- [x] **График** — визуализация исторических данных с Recharts
-- [x] **Несколько валют** — BTC, ETH, SOL, ADA
-- [x] **WebSocket** — Обновление Ордеров в реальном времени
-- [x] **Страница 404**
-
 ### ⚡ В процессе
 
-- [x] **Docker** — контейнеризация frontend + backend
-- [x] **Zustand** — управление состоянием валют
-- [x] **Shadcn UI** — улучшение UI/UX
-- [ ] **lightweight-charts** - добавление функций управления графиком
+- [ ] **Lightweight Charts** — добавление функций управления графиком
+- [ ] **CI/CD** — автоматический деплой на Railway/Render
 
 ### 📦 В планах
 
-- [x] **Тестирование** — Vitest + React Testing Library
-- [ ] **База данных** — сохранение истории (SQLite/PostgreSQL)
+- [ ] **База данных** — сохранение истории (PostgreSQL)
 - [ ] **Аутентификация** — пользовательские аккаунты
-- [ ] **CI/CD** — автоматический деплой на Vercel/Railway
+- [ ] **E2E тесты** — Playwright
 
 ### 🚀 Дальнейшее развитие
 
 - [ ] **Next.js** — миграция для SEO и SSR (опционально)
-- [ ] **Мобильное приложение** — React Native (если будет интересно)
+- [ ] **Мобильное приложение** — React Native
 - [ ] **Торговые сигналы** — AI-аналитика на основе данных
 
 ---
