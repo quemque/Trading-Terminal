@@ -14,7 +14,9 @@ describe('ChartHeader', () => {
       const priceElement = document.querySelector('.tabular-nums')
       expect(priceElement).toBeInTheDocument()
       expect(priceElement?.textContent).toContain('$')
-      expect(priceElement?.textContent?.replace(/\s/g, '')).toBe('$3000')
+
+      const cleanPrice = priceElement?.textContent?.replace(/[\s,]/g, '')
+      expect(cleanPrice).toBe('$3000')
    })
 
    it('renders days badge', () => {
