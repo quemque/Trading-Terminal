@@ -5,6 +5,7 @@
    "type": "module",
    "scripts": {
       "dev": "bun --bun vite --host",
+      "test": "vitest --config vitest.config.ts",
       "dev:backend": "bun --watch backend/src/index.js",
       "dev:all": "bun run dev && bun run dev:backend",
       "build": "tsc -b && vite build",
